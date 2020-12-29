@@ -14,10 +14,11 @@ public class Task3 {
             for(int j = 0; j < n; j++) {   // →
                 massive[i][j] = random.nextInt(50);
                 sum += massive[i][j];
+            }
+            System.out.println(sum);
                 if(sum >= maxSumNumbersColumn) {
                     maxSumNumbersColumn = sum;
                     index = i;  // ↓ row
-                }
             }
         }
         System.out.println(index + " индекс строки, сумма чисел в которой максимальна " + maxSumNumbersColumn);

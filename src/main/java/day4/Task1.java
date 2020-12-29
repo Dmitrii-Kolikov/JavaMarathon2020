@@ -28,9 +28,8 @@ public class Task1 {
             if(massive[i] % 2 == 0) {
                 evenNumbers++;
             }
-            if(massive[i] % 2 == 1) {
-                oddNumbers++;
-            }
+              else oddNumbers++;
+
         }
         System.out.println(Arrays.toString(massive));
         System.out.println("Длина массива: " + massive.length);

@@ -16,11 +16,11 @@ public class Task4 {
             int sum = 0;
             for (int j = i; j < i + 3; j++) {
                 sum += massive[j];
+            }
                 if (sum > sumMaxThreeNumbers) {
                     sumMaxThreeNumbers = sum;
                     index = i;
                 }
-            }
         }
         System.out.println("индекс первого элемента тройки: " + index);
         System.out.println("Значение тройки с максимальной суммой: " + sumMaxThreeNumbers);
