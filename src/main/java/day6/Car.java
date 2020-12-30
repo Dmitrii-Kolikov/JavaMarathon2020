@@ -8,18 +8,23 @@ public class Car {
     public int getYearOfIssue() {
         return yearOfIssue;
     }
+
     public String getColour() {
         return colour;
     }
+
     public String getModel() {
         return model;
     }
+
     public void setYearOfIssue(int yearOfIssue) {
         this.yearOfIssue = yearOfIssue;
     }
+
     public void setColour(String colour) {
         this.colour = colour;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -27,8 +32,10 @@ public class Car {
     public void info() {
         System.out.println("Это автомобиль");
     }
+
     public void yearDifference(int inputYear) {
         int sum = inputYear - yearOfIssue;
         if (sum >= 0) System.out.println("Разницу между переданным годом и годом выпуска транспортного средства " + sum);
+        else System.out.println("Разницу между переданным годом и годом выпуска транспортного средства " + 0);
     }
 }

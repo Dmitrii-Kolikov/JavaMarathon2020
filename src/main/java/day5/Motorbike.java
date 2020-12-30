@@ -14,9 +14,11 @@ public class Motorbike {
     public int getYearOfIssue() {
         return yearOfIssue;
     }
+
     public String getColour() {
         return colour;
     }
+
     public String getModel() {
         return model;
     }
