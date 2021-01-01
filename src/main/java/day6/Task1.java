@@ -7,7 +7,7 @@ public class Task1 {
         yamaha.yearDifference(2020);
 
         Car honda = new Car();
-        honda.setYearOfIssue(2019);
+        honda.setYearOfIssue(2000);
         honda.setModel("CR-V");
         honda.setColour("White");
         honda.info();

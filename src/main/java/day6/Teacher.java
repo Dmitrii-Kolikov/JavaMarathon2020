@@ -3,7 +3,6 @@ package day6;
 import java.util.Random;
 
 public class Teacher {
-    Random random = new Random();
     private String name;
     private String subject;
 
@@ -12,28 +11,28 @@ public class Teacher {
         this.subject = subject;
     }
 
-    public void evaluate(String student) {
-        String grade;
+    public void evaluate(Student student) {
+        Random random = new Random();
         int mark = random.nextInt(4) + 2;
-        if (mark == 2) {
-            grade = "неудовлетворительно";
-            System.out.println("Преподаватель " + name + " оценил студента с именем " + student
-                    + " по предмету " + subject + " на оценку " + grade);
+        String grade = "";
+
+        switch (mark) {
+            case 2:
+                grade = "неудовлетворительно";
+                break;
+            case 3:
+                grade = "удовлетворительно";
+                break;
+            case 4:
+                grade = "хорошо";
+                break;
+            case 5:
+                grade = "отлично";
+                break;
+
         }
-        else if (mark == 3) {
-            grade = "удовлетворительно";
-            System.out.println("Преподаватель " + name + " оценил студента с именем " + student
-                    + " по предмету " + subject + " на оценку " + grade);
-        }
-        else if (mark == 4) {
-            grade = "хорошо";
-            System.out.println("Преподаватель " + name + " оценил студента с именем " + student
-                    + " по предмету " + subject + " на оценку " + grade);
-        }
-        else if (mark == 5) {
-            grade = "отлично";
-            System.out.println("Преподаватель " + name + " оценил студента с именем " + student
-                    + " по предмету " + subject + " на оценку " + grade);
-        }
+        System.out.println("Преподаватель " + name + " оценил студента с именем " + student.getName()
+                + " по предмету " + subject + " на оценку " + grade);
+
     }
 }

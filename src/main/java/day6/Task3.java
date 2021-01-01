@@ -7,7 +7,7 @@ public class Task3 {
     public static void main(String[] args) {
         Student student = new Student("Василий");
         Teacher teacher = new Teacher("Федорович", "Математика");
-        teacher.evaluate(student.getName());
+        teacher.evaluate(student);
 
 
     }

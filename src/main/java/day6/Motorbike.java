@@ -27,8 +27,9 @@ public class Motorbike {
     }
 
     public void yearDifference(int inputYear) {
-        int sum = inputYear-yearOfIssue;
-        if (sum >= 0) System.out.println("Разницу между переданным годом и годом выпуска транспортного средства " + sum);
+        int sum = inputYear - yearOfIssue;
+        System.out.println("Разницу между переданным годом и годом выпуска транспортного средства " + Math.abs(sum));
+
     }
 }
 
