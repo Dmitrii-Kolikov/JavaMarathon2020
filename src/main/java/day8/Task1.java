@@ -4,7 +4,7 @@ public class Task1 {
     public static void main(String[] args) {
         long start1 = System.currentTimeMillis();
         String string = "";
-        for(int i =0; i < 20000; i ++) {
+        for(int i = 0; i < 20000; i ++) {
            string = string + i + " ";
         }
         System.out.println(string);
@@ -16,7 +16,7 @@ public class Task1 {
 
         long start2 = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder("");
-        for(int i =0; i < 20000; i ++) {
+        for(int i = 0; i < 20000; i ++) {
           sb.append(i).append(" ");  //for me
         }
         System.out.println(sb);
