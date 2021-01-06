@@ -2,10 +2,10 @@ package day11.task1;
 
 public class Picker implements Worker {
     private int salary;
-    private Boolean isPayed;
+    private boolean isPayed;
     Warehouse warehouse;
 
-    public Picker(int salary, Boolean isPayed) {
+    public Picker(int salary, boolean isPayed) {
         this.salary = salary;
         this.isPayed = isPayed;
     }
@@ -26,13 +26,15 @@ public class Picker implements Worker {
     public void bonus() {
         if(Warehouse.countPickedOrders < 10000) {
             System.out.println("Бонус пока не доступен");
+            return;
         }
-        else if(Warehouse.countPickedOrders == 10000) {
-            salary += 70000;
-            isPayed = true;
-            Warehouse.countPickedOrders++; //тут тоже вопрос нужен ли увелечивать.
+        if(isPayed) {
+            System.out.println("Бонус уже был выплачен");
+            return;
         }
-        else  System.out.println("Бонус уже был выплачен");
+        salary += 70000;
+        isPayed =true;
+
     }
 
     public int getSalary() {
