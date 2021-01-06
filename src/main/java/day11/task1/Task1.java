@@ -5,8 +5,9 @@ public class Task1 {
         Picker picker1 = new Picker(0, false);
         Courier courier1 = new Courier(0, false);
         businessProcess(picker1);
-        businessProcess(courier1);
         System.out.println(picker1);
+        System.out.println(new Warehouse().toString());
+        businessProcess(courier1);;
         System.out.println(courier1);
         System.out.println(new Warehouse().toString());
 

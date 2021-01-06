@@ -24,7 +24,7 @@ public class Courier implements Worker {
 
     @Override
     public void bonus() {
-        if(warehouse.getCountDeliveredOrders() < 10000) {
+        if(Warehouse.countDeliveredOrders < 10000) {
             System.out.println("Бонус пока не доступен");
             return;
         }
