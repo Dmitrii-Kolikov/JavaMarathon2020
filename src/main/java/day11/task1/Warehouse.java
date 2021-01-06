@@ -1,15 +1,21 @@
 package day11.task1;
 
 public class Warehouse {
-    public static int countDeliveredOrders;
     public static  int countPickedOrders;
+    public static int countDeliveredOrders;
+
+    public int getCountPickedOrders() {
+        return countPickedOrders;
+    }
 
     public int getCountDeliveredOrders() {
         return countDeliveredOrders;
     }
 
-    public int getCountPickedOrders() {
-        return countPickedOrders;
+    @Override
+    public String toString() {
+        return String.format("количесвто собранных заказов: %d, количество доставленных заказов: %d",
+                countPickedOrders, countDeliveredOrders);
     }
 
 
