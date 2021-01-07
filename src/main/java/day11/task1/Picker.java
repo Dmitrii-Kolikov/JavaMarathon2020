@@ -5,26 +5,23 @@ public class Picker implements Worker {
     private boolean isPayed;
     Warehouse warehouse;
 
-    public Picker(int salary, boolean isPayed) {
-        this.salary = salary;
-        this.isPayed = isPayed;
-    }
-
     public Picker(Warehouse warehouse) {
         this.warehouse = warehouse;
-        Warehouse.countPickedOrders = 0;
-        //вот тут остались вопрос
+    }
+
+    public int getSalary() {
+        return salary;
     }
 
     @Override
     public void doWork() {
-        Warehouse.countPickedOrders++;
+        warehouse.counterPickedOrders();
         salary += 80;
     }
 
     @Override
     public void bonus() {
-        if(Warehouse.countPickedOrders < 10000) {
+        if(warehouse.getCountPickedOrders() < 10000) {
             System.out.println("Бонус пока не доступен");
             return;
         }
@@ -35,10 +32,6 @@ public class Picker implements Worker {
         salary += 70000;
         isPayed =true;
 
-    }
-
-    public int getSalary() {
-        return salary;
     }
 
     @Override

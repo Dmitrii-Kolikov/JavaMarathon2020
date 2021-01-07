@@ -5,26 +5,23 @@ public class Courier implements Worker {
     private boolean isPayed;
     Warehouse warehouse;
 
-    public Courier(int salary, boolean isPayed) {
-        this.salary = salary;
-        this.isPayed = isPayed;
-    }
-
     public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;
-        Warehouse.countDeliveredOrders = 0;
-        //вот тут остались вопрос
+    }
+
+    public int getSalary() {
+        return  salary;
     }
 
     @Override
     public void doWork() {
-        Warehouse.countDeliveredOrders++;
+        warehouse.counterDeliveredOrders();
         salary += 100;
     }
 
     @Override
     public void bonus() {
-        if(Warehouse.countDeliveredOrders < 10000) {
+        if(warehouse.getCountDeliveredOrders() < 10000) {
             System.out.println("Бонус пока не доступен");
             return;
         }
@@ -35,10 +32,6 @@ public class Courier implements Worker {
        salary += 50000;
        isPayed =true;
 
-    }
-
-    public int getSalary() {
-        return salary;
     }
 
     @Override

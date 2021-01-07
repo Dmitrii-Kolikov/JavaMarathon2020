@@ -1,21 +1,23 @@
 package day11.task2;
 
-public abstract class Hero {
-    private int health;
-    private double prphysDef; // (процент поглощения физического урона)
-    private double magicDef; // (процент поглощения магического урона)
-    private int physAtt; // (величина физической атаки), по необходимости
-    private int magicAtt; // (величина магической атаки), по необходимости
+public abstract class Hero implements PhysAttack {
+     final static int MAX_HEALTH = 100;
+     final static int MIN_HEALTH = 0;
+     int health;
+     double prphysDef; // (процент поглощения физического урона)
+     double magicDef; // (процент поглощения магического урона)
+     int physAtt; // (величина физической атаки)
 
-    public  abstract int getHealth();
+    public Hero() {
+        health = 100;
+    }
 
-    public abstract double getPrphysDef();
-
-    public abstract double getMagicDef();
-
-    public abstract int getMagicAtt();
-
-    public abstract int getPhysAtt();
-
-    public abstract void setHealth(int v);
+    @Override
+    public void physicalAttack(Hero hero) {
+        double attackScore = physAtt * (1 - hero.prphysDef);
+        if(hero.health - attackScore < MIN_HEALTH) {
+            hero.health = MIN_HEALTH;
+        }
+        else hero.health -= attackScore;
+    }
 }
