@@ -3,7 +3,7 @@ package day11.task1;
 public class Courier implements Worker {
     private int salary;
     private boolean isPayed;
-    Warehouse warehouse;
+    private Warehouse warehouse;
 
     public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;
