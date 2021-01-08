@@ -24,28 +24,16 @@ public class User {
     }
 
     public boolean isSubscribed(User user) {
-        for (User x: subscriptions) {
-           if (x.getUserName().equals(user.getUserName())) {
-                return  true;
-            }
-        }
-        return false;
-        //возвращает True, если пользователь подписан на пользователя user и False, если не подписан.
+        return subscriptions.contains(user);
     }
 
     public boolean isFriend(User user) {
-        for (User x: subscriptions) {  //подписки user2
-            for (User y: user.getSubscriptions()) {  // подписки user2
-                if(y.getUserName().equals(getUserName()) && x.getUserName().equals(user.getUserName()) ) {
-                    return true;                                    //user1 подписан на user2 проверяем
-                }
-            }
-        }
-        return false;
+        return subscriptions.contains(user) && user.isSubscribed(this);
+
     }
 
     public void sendMessage(User user, String text) {
-        MessageDatabase.addNewMessage(new User (getUserName()), new User(user.getUserName()), text);
+        MessageDatabase.addNewMessage(this, user, text);
         //отправляет сообщение с текстом text пользователю user. Здесь должен использоваться статический метод из MessageDatabase.
     }
 

@@ -13,5 +13,6 @@ public class Task1 {
         Message message = new Message(user3, user4, "I'm also OK. \n" +
                 "Let's meet today?");
         System.out.println(message);
+
     }
 }

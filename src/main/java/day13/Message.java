@@ -6,7 +6,7 @@ public class Message {
     private User sender;  //отправитель сообщения
     private User receiver;  //получатель сообщения
     private String text;  //текст сообщения
-    Date date = new Date();   //дата отправки сообщения
+    private Date date = new Date();   //дата отправки сообщения
 
     //Также, конструктор должен назначать полю date текущее время (то есть время создания объекта Message).
     public Message(User sender, User receiver, String text) {
