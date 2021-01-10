@@ -17,7 +17,7 @@ public class Task1 {
         List<String[]> s = new ArrayList<>();
         while ((nextLine = reader.readNext()) != null) {
             if (nextLine[2].equals("0")) {
-                pw.println(Arrays.toString(nextLine));
+                pw.println(Arrays.toString(nextLine).replaceAll("\\[|\\]", ""));
             }
                 }
         pw.close();
