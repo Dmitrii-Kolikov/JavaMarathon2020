@@ -18,12 +18,9 @@ public class Task2 {
 
         List<Integer> numbers = new ArrayList<>();
         Scanner scanner = new Scanner(file1);
-        String n = "";
-
 
         while (scanner.hasNextInt()) {
-            n = scanner.next();
-            numbers.add(Integer.parseInt(n));
+            numbers.add(Integer.parseInt(scanner.next()));
         }
         scanner.close();
 
@@ -46,15 +43,12 @@ public class Task2 {
     public static void printResult(File file2) throws FileNotFoundException {
         Scanner scanner2 = new Scanner(file2).useLocale(Locale.US);
         //Используйте локаль US, тогда в формате ввода числа можно вместо запятой указывать точку:
-        String s1 = "";
         double sumFile2 = 0;
         while (scanner2.hasNextDouble()) {
-            s1 = scanner2.next();
-            sumFile2 += Double.parseDouble(s1);
-
-
+            sumFile2 += Double.parseDouble(scanner2.next());
         }
         scanner2.close();
+
         System.out.println((int) sumFile2);
 
     }
